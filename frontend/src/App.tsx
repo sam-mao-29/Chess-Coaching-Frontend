@@ -1,10 +1,24 @@
 import Schedule from './components/schedule';
+import Roster from './components/roster';
+import './index.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import StudentProfile from './components/studentProfile';
 
 const App = () => {
   return (
-    <div>
-      <Schedule />
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Schedule />
+              <Roster />
+            </>
+            } />
+          <Route path="/student/:id" element={<StudentProfile />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
       
       
